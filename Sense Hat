@@ -1,0 +1,26 @@
+from sense_hat import SenseHat
+from time import sleep
+from datetime import datetime
+def cycle():
+  for i in range(1*17):
+    sense = SenseHat()
+    temp = sense.get_temperature()
+    humidity = sense.get_humidity()
+    pressure = sense.get_pressure()
+    print(sense.temp)
+    print(sense.humidity)
+    print(sense.pressure)
+    sense.color.gain = 16
+    light = sense.color.clear
+    if light < 64:
+      print('Dark')
+    else:
+      print('Bright')
+
+
+    sleep(60*10)
+    
+cycle()
+
+
+  
